@@ -1,7 +1,7 @@
 ### Phoenix Data Retrieval API Call ###
 
 from importingCSVs import city_mergeDF
-#from keys import q_key
+from keys import quandlekey
 from requests import get
 import pandas as pd
 import json
@@ -12,16 +12,17 @@ print(city_mergeDF)
 
 resultsDict = {}
 
-for row in city_mergeDF[0:4]:
+cityCodes = city_mergeDF['area_code'].unique()
+#print(cityCodes)
+
+for cityCode in cityCodes:
     
-    cityCode = row['area_code']
-    response = get(f'https://www.quandl.com/api/v3/datasets/FMAC/HPI_{cityCode}')
+    response = get(f'https://www.quandl.com/api/v3/datasets/FMAC/HPI_{cityCode}?api_key={quandlekey}')
     cityObj = dict(response.json())['dataset']
     indexTable = cityObj['data']
     # not sure if this will work to create dataframe
-    resultsDict.append({str(row['team'], row['first_year']):indexTable}
-    print(json.dumps(resultsDict))
-          
+    resultsDict[str(cityCode)]=indexTable
+print(resultsDict['41180'])          
           
           
     DF = pd.DataFrame(np.array(indexTable),columns=['date', 'nsa', 'sa'])
