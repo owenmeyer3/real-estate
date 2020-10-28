@@ -1,0 +1,38 @@
+team,from,to,first_year,city_string,stadium,League
+Cardinals,STL,PHX,1988,Phoenix-Mesa-Scottsdale AZ,Sun Devil Stadium,NFL
+Rams,LA,STL,1995,St. Louis MO-IL,The Dome at Americas Center,NFL
+Rams,STL,LA,2016,Los Angeles-Long Beach-Anaheim CA,LA Coliseum,NFL
+Colts,BAL,IND,1984,Indianapolis-Carmel-Anderson IN,RCA Dome,NFL
+Chargers,SD,LA,2017,Los Angeles-Long Beach-Anaheim CA,LA Coliseum,NFL
+Raiders,OAK,LA,1982,Los Angeles-Long Beach-Anaheim CA,LA Coliseum,NFL
+Raiders,LA,OAK,1995,Los Angeles-Long Beach-Anaheim CA,Oakland Coliseum,NFL
+Raiders,OAK,VEG,2020,Las Vegas-Henderson-Paradise NV,Allegiant Stadium,NFL
+Oilers,HOU,NSH,1997,Nashville-Davidson--Murfreesboro--Franklin TN,Nissan Stadium,NFL
+Seahawks,,SEA,1976,Seattle-Tacoma-Bellevue WA,King Dome,NFL
+Buccaneers,,TB,1976,Tampa-St. Petersburg-Clearwater FL,Tampa/Raymond James Stadium,NFL
+Panthers,,CHA,1995,Charlotte-Concord-Gastonia NC-SC,Bank of America Stadium,NFL
+Jaguars,,JAC,1995,Jacksonville FL,TIAA Bank Field,NFL
+Ravens,,BAL,1996,Baltimore-Columbia-Towson MD,M&T Bank Stadium,NFL
+Texans,,HOU,2002,Houston-The Woodlands-Sugar Land TX,NRG Stadium,NFL
+Rockets,San Diego,Houston,1971,Houston-The Woodlands-Sugar Land TX,"1510 Polk St, Houston, TX 77002",NBA
+Wizards,Baltimore,Washington DC,1973,Washington-Arlington-Alexandria DC-VA-MD-WV,"601 F Street, Washington DC",NBA
+Jazz,New Orleans,Salt Lake City,1979,Salt Lake City UT,"301 S Temple, Salt Lake City, UT 84101",NBA
+Clippers,San Diego,LA,1984,Houston-The Woodlands-Sugar Land TX,"1111 S Figueroa St, Los Angeles, CA 90015",NBA
+Kings,Kansas City,Sacarmento,1985,Sacramento--Roseville--Arden-Arcade CA,"500 David J Stern Walk, Sacramento, CA 95814",NBA
+Grizzlies,Vancouver,Memphis,2001,Memphis TN-MS-AR,"191 Beale St, Memphis, TN 38103",NBA
+Thunder,Seattle,Oklahoma City,2008,Oklahoma City OK,"100 W Reno Ave, Oklahoma City, OK 73102",NBA
+Islanders,,NY,1972,New York-Newark-Jersey City NY-NJ-PA,Nassau Coliseum,NHL
+Capitals,,WAS,1974,Washington-Arlington-Alexandria DC-VA-MD-WV,Capital One Arena,NHL
+Devils,COL,NJ,1982,New York-Newark-Jersey City NY-NJ-PA,Prudential Center (Newark),NHL
+Sharks,,SJ,1991,San Jose-Sunnyvale-Santa Clara CA,SAP Center at San Jose,NHL
+Lightning,,TB,1992,Tampa-St. Petersburg-Clearwater FL,Amalie Arena,NHL
+Stars,MIN,DAL,1993,Dallas-Fort Worth-Arlington TX,American Airlines Center,NHL
+Panthers,,FLA,1993,Miami-Fort Lauderdale-West Palm Beach FL,BB&T Center,NHL
+Mighty Ducks,,ANA,1993,Los Angeles-Long Beach-Anaheim CA,Honda Center (Anaheim),NHL
+Avalanche,QUE,COL,1995,Denver-Aurora-Lakewood CO,Pepsi Center,NHL
+Coyotes,WIN,PHX,1996,Phoenix-Mesa-Scottsdale AZ,Gila River Arena,NHL
+Hurricanes,HTF,CAR,1997,Charlotte-Concord-Gastonia NC-SC,PNC Arena,NHL
+Predators,,NSH,1998,Nashville-Davidson--Murfreesboro--Franklin TN,Bridgestone Arena (Nashville),NHL
+Blue Jackets,,COL,2000,Columbus GA-AL,Nationwide Arena,NHL
+Wild,,MIN,2000,Minneapolis-St. Paul-Bloomington MN-WI,Xcel Energy Center,NHL
+Golden Knights,,VGS,2017,Las Vegas-Henderson-Paradise NV,T-Mobile Arena,NHL
