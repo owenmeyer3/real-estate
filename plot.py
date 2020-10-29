@@ -3,16 +3,21 @@ from getCityData import indicesDict, areaCodes, USIndexDF
 import matplotlib.pyplot as plt
 #import pandas as pd
 
-####plot date vs. sa for select city
-#Choose city
-for areaCodeForPlot in areaCodes:
-    #get dataframe for city
-    plotDF = indicesDict[str(areaCodeForPlot)]
-    cityName = cityCodes[cityCodes['area_code'] == areaCodeForPlot]['city_string'].values[0]
+saDiffDict = {}
 
+####plot date vs. sa (city, US and city - US) for select city
+#Choose city
+for areaCode in areaCodes:
+    #get dataframe for city
+    plotDF = indicesDict[str(areaCode)]
+    cityName = cityCodes[cityCodes['area_code'] == areaCode]['city_string'].values[0]
+
+    #make dataframe comparing city and US sa indices
     cityUSDF = plotDF.merge(USIndexDF, on='date')
     cityUSDF['sa'] = cityUSDF['sa_x'] - cityUSDF['sa_y']
     cityUSDF.rename(columns = {'sa_x':'sa_city', 'sa_y':'sa_US', 'sa':'sa_city-US'}, inplace = True)
+    saDiffDict[str(areaCode)]=cityUSDF[['date', 'sa_city-US']]
+
     #set x, y arrays and plot for city
     x1 = cityUSDF['date'].values
     y1 = cityUSDF['sa_city'].values
@@ -32,7 +37,9 @@ for areaCodeForPlot in areaCodes:
     plt.title(cityName)
     plt.xlabel('Date')
     plt.ylabel("SA Index")
+
     #show plot
     plt.legend()
     plt.savefig('cityPlots/' + cityName + '_plot.png')
+    plt.clf()
 
