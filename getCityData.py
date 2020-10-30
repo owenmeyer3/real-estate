@@ -5,10 +5,12 @@ import pandas as pd
 import json
 import numpy as np 
 
+##This file querys the FMAC api for SA Index values for cities and the USA as a whole
+
 #create empty dictionary to hold sa/nsa indices for all cities
 indicesDict = {}
 
-#get unique area codes for included cities
+#get unique area codes for included cities (to inject into query string)
 areaCodes = city_mergeDF['area_code'].unique()
 
 
@@ -25,7 +27,7 @@ for areaCode in areaCodes:
     cityIndexDF['date'] = pd.to_datetime(cityIndexDF['date'])
     cityIndexDF['nsa'] = cityIndexDF['nsa'].astype(float)
     cityIndexDF['sa'] = cityIndexDF['sa'].astype(float)
-    #sort dictionary by date and add to dictionary
+    #sort DF by date, remove nsa, and add to dictionary {key = FMAC area code: value = SA Index DF for area code}
     cityIndexDF = cityIndexDF.sort_values('date', ascending = True)
     indicesDict[str(areaCode)]=cityIndexDF[['date', 'sa']]
 
@@ -41,6 +43,6 @@ USIndexDF = pd.DataFrame(np.array(USIndexTable), columns = ['date', 'nsa', 'sa']
 USIndexDF['date'] = pd.to_datetime(USIndexDF['date'])
 USIndexDF['nsa'] = USIndexDF['nsa'].astype(float)
 USIndexDF['sa'] = USIndexDF['sa'].astype(float)
-#sort dictionary by date and add to dictionary
+#sort DF by date and remove nsa
 USIndexDF = USIndexDF.sort_values('date', ascending = True)
 USIndexDF=USIndexDF[['date', 'sa']]

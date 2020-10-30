@@ -2,11 +2,19 @@ from importingCSVs import cityCodes
 from getCityData import indicesDict, areaCodes, USIndexDF
 import matplotlib.pyplot as plt
 from scipy import stats
-#import pandas as pd
 
-# unneeded saDiffDict = {}
+### This file is used to:
+###### find the 0.95 statistical significance x-value
+###### on 1 plot:
+######### SA Index for a city as a timeseries
+######### SA Index for the USA as a timeseries
+######### SA Index for a city minus SA Index for the USA as a timeseries
+######### 0.95 statistical significance x-value for SA Index for a city minus SA Index for the USA as a timeseries
 
-####plot date vs. sa (city, US and city - US) for select city
+### We use the 0.95 statistical significance line to visually compare which date the city - US line has a significant high value.
+### We can see if these dates occur shortly after teams were established in the city
+
+##Loop: plot date vs. sa (city, US and city - US) for select city
 #Choose city
 for areaCode in areaCodes:
     #get dataframe for city
@@ -17,7 +25,6 @@ for areaCode in areaCodes:
     cityUSDF = plotDF.merge(USIndexDF, on='date')
     cityUSDF['sa'] = cityUSDF['sa_x'] - cityUSDF['sa_y']
     cityUSDF.rename(columns = {'sa_x':'sa_city', 'sa_y':'sa_US', 'sa':'sa_city-US'}, inplace = True)
-    #Unneeded - saDiffDict[str(areaCode)]=cityUSDF[['date', 'sa_city-US']]
 
     #find 0.95 sample limit
     mean = cityUSDF['sa_city-US'].mean()

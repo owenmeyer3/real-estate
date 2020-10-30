@@ -1,3 +1,2 @@
-ZWSID = 'X1-ZWz1i209jskm4r_65xu9'
-attomKey = 'dcbadcf347401959284a91d0274ad3cb'
+#Key used for Quandl account which allows FMAC API access
 quandlekey = '6Csa5ceJeDFNQF6LX1_g'
