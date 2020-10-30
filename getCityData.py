@@ -14,7 +14,10 @@ areaCodes = city_mergeDF['area_code'].unique()
 
 for areaCode in areaCodes:
     #query city data for each city and put in dataframe
-    cityResponse = get(f'https://www.quandl.com/api/v3/datasets/FMAC/HPI_{areaCode}?api_key={quandlekey}')
+    try:
+        cityResponse = get(f'https://www.quandl.com/api/v3/datasets/FMAC/HPI_{areaCode}?api_key={quandlekey}')
+    except:
+        print('FMAC Area Code ' + str(areaCode) + ' query failed')
     cityObj = dict(cityResponse.json())['dataset']
     cityIndexTable = cityObj['data']
     cityIndexDF = pd.DataFrame(np.array(cityIndexTable), columns = ['date', 'nsa', 'sa'])
@@ -27,7 +30,10 @@ for areaCode in areaCodes:
     indicesDict[str(areaCode)]=cityIndexDF[['date', 'sa']]
 
 #query US Data and put in dataframe
-USResponse = get(f'https://www.quandl.com/api/v3/datasets/FMAC/HPI_USA?api_key={quandlekey}')
+try:
+    USResponse = get(f'https://www.quandl.com/api/v3/datasets/FMAC/HPI_USA?api_key={quandlekey}')
+except:
+    print('FMAC US query failed')
 USObj = dict(USResponse.json())['dataset']
 USIndexTable = USObj['data']
 USIndexDF = pd.DataFrame(np.array(USIndexTable), columns = ['date', 'nsa', 'sa'])
