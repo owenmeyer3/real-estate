@@ -22,6 +22,8 @@ Plots are used to visualize:
 * only 2 cities showed statistically significantly high SA Index Difference values within 10 years after franchise establishment
 * Given that statistically significant values more frquently showed up in cities not shortly after franchise establishment, and given that thee are many other indistries making city economic effects, it seems that SA Index Differences were more frequently afftected by other city variables
 
+![](images/capture.png)
+
 
 
 
